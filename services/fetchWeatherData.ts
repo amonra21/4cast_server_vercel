@@ -1,5 +1,5 @@
-import { ForecastDay } from "../models/forecastDay";
 import { mapWeatherCodeToIcon } from "../utils/weatherCodeMapper";
+import { ForecastDay } from "../models/forecastDay";
 
 export const fetchWeatherData = async (lat: number, lon: number): Promise<ForecastDay[]> => {
     const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}` +
