@@ -1,5 +1,5 @@
-import { Context } from "../deps.ts";
-import { fetchWeatherData } from "../services/fetchWeatherData.ts";
+import { Context } from "../deps";
+import { fetchWeatherData } from "../services/fetchWeatherData";
 
 export const getWeather = async (ctx: Context) => {
     const url = new URL(ctx.request.url);
