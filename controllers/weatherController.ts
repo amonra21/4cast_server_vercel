@@ -2,14 +2,13 @@ import { Context } from "../deps";
 import { fetchWeatherData } from "../services/fetchWeatherData";
 
 export async function getWeather(req: Request): Promise<Response> {
-    console.log("Wywołano getWeather");
-
     try {
-        const host = req.headers.get("host") ?? "localhost";
-        const protocol = host.includes("localhost") ? "http" : "https";
-        const url = new URL(req.url, `${protocol}://${host}`);
+        console.log("req.url:", req.url);
+        console.log("req.headers.get('host'):", req.headers.get("host"));
 
-        console.log("Full URL:", url.href);
+        const url = new URL(req.url, `https://${req.headers.get("host")}`);
+
+        console.log("full URL:", url.href);
 
         const lat = url.searchParams.get("lat");
         const lon = url.searchParams.get("lon");
