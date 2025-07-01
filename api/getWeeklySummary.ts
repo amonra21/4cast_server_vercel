@@ -1,3 +1,3 @@
-import { getWeeklySummary } from "../controllers/weeklySummaryController";
+import { getWeeklySummary } from "../controllers/weatherSummaryController";
 
 export default getWeeklySummary;
